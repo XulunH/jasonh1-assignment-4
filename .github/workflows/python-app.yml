@@ -25,6 +25,7 @@ jobs:
 
     - name: Run the application
       run: |
-        make run &
+        make run > server_output.log 2>&1 &
         sleep 10  # Wait for the server to start
+        cat server_output.log  # Display server output for debugging
         curl --fail http://localhost:3000 || exit 1
