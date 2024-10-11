@@ -16,7 +16,6 @@ app = Flask(__name__)
 newsgroups = fetch_20newsgroups(subset='all')
 documents = newsgroups.data
 
-
 stop_words = stopwords.words('english')
 
 vectorizer = TfidfVectorizer(stop_words='english')
